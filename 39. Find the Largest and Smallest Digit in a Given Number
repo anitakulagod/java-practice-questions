@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class LargestSmallestDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        int num = n;
+
+        int max = 0, min = 9;
+
+        while(n > 0){
+            int digit = n % 10;
+            if(digit > max) max = digit;
+            if(digit < min) min = digit;
+            n = n / 10;
+        }
+
+        System.out.println("Largest digit in " + num + " = " + max);
+        System.out.println("Smallest digit in " + num + " = " + min);
+    }
+}
